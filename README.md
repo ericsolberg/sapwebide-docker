@@ -93,6 +93,7 @@ Currently, I've just managed to get SAP Web IDE up and running. There are severa
 - As noted above, anything you edit or create in your container will be lost when you shut down.
 - There aren't any back end connections defined, so you can't accomplish very much. You can configure those yourself inside the running container, but you'll want to learn how to add those changes to the container build so your changes aren't lost.
 - Running your app currently doesn't work. This is because SAP Web IDE launches the app preview on a randomly assigned port. You can easily map ports from the Container to the VM (as we did with port 80:8080), but the randomly assigned port comes from a broad range. Docker does support mapping ranges of ports (i.e. -p 45000-55000:45000-55000) but I found that this takes a very long time (and probably resources) as Docker loops through and maps every port in that range. It would be better if SAP Web IDE used the same port and just mapped the preview into a unique URL (mental note... submit a feature request to SAP Web IDE).
+- 
 ## Todo
 1. Map project storage to a local volume for project persistence
 2. Document a simple way to configure service destinations
