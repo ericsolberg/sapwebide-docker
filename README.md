@@ -4,7 +4,8 @@ The purpose of this project is to easily and quicly run SAP Web IDE in a stand-a
 - Eclipse Orion
 - Eclipse Director
 - SAP Web IDE 1.8 Local Install
+- 
  This is part of a general exploration of MicroServices and DevOps concepts in the context of SAP Mobile technologies. This is not a "proper" MicroService, however, as a MicroService implementation of Web IDE would be decomposed into more elements.
-##Important
+## Important
 This is intended for experimental and demo purposes only. It is not intended for production use. The resulting Docker image should not be distributed as it contains proprietary components that may not be distributed.
 
