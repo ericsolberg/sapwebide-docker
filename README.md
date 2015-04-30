@@ -11,7 +11,7 @@ This is part of a general exploration of MicroServices and DevOps concepts in th
 This is intended for experimental and demo purposes only. It is not intended for production use. The resulting Docker container should not be distributed or posted on a public repository as it contains proprietary components.
 ## Contents
 * [Quick Setup](#quick-setup)
-* [Create the Container](#create-the-container)
+* [Build the Container](#build-the-container)
 * [Run the Container](#run-the-container)
 * [Issues](#issues)
 * [Todo](#todo)
@@ -61,7 +61,7 @@ Of course, your instance ID will be different. Verify your instance is running:
 Output:
 
     CONTAINER ID        IMAGE                     COMMAND             CREATED              STATUS              PORTS                  NAMES
-    <id>                sapwebide-docker:latest   "./orion"           About a minute ago   Up About a minute   0.0.0.0:80->8080/tcp   pensive_bartik
+    <container-id>      sapwebide-docker:latest   "./orion"           About a minute ago   Up About a minute   0.0.0.0:80->8080/tcp   pensive_bartik
 On a Linux machine, you should now be able to connect to SAP Web IDE on localhost. But with Boot2Docker, the host is actually the Boot2Docker virtual machine, which has its own IP address. To get this IP address, type:
 
     Boot2Docker ip
@@ -75,8 +75,23 @@ Of course, you need to change the IP address above to the one reported by `Boot2
 > Note: Using VirtualBox, you can map this port to a local port on your machine.
 > This is optional but if you do, you can access SAP Web IDE through http://localhost/webide/index.html
 
+### Important
+Do not create any projects/content in SAP Web IDE that you intend to save. Anything you save Will be lost when you shut down and re-start your container. Mapping projects to a local volume or GitHub are on the todo list
 
-    
+### Shutting Down
+To shut down your container, use the `docker kill` command. You can use the instance ID reported from `docker ps`:
+
+    docker kill <container-id>
+### Running the container interactively
+Your container is a fully self-contained Debian Linux system. If you want to poke around inside the container, one way to do this is to use the command:
+
+    docker run -i -t -p 80:8080 sapwebide-docker /bin/bash
+This will give you a bash prompt inside your container. At this point, SAP Web IDE will not be running. To manually launch SAP Web IDE, type:
+
+    CD $WEBIDE_DIR/eclipse
+    ./orion
+Typing exit at the osgi> prompt will take you back out to your container, and typing exit again will shut down your container and return to Boot2Docker.
+>Note: Any changes you make inside the container, and any 
 ## Issues
 Issues...
 ## Todo
