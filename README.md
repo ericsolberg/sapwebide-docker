@@ -73,7 +73,7 @@ Of course, you need to change the IP address above to the one reported by `Boot2
 > This is optional but if you do, you can access SAP Web IDE through http://localhost/webide/index.html
 
 ### Important
-Do not create any projects/content in SAP Web IDE that you intend to save. Anything you save Will be lost when you shut down and re-start your container. Mapping projects to a local volume or GitHub are on the todo list
+Do not create any projects/content in SAP Web IDE that you intend to save. Anything you save will be lost when you shut down and re-start your container. Mapping projects to a local volume or GitHub are on the todo list.
 
 ### Shutting Down
 To shut down your container, use the `docker kill` command. You can use the instance ID reported from `docker ps`:
@@ -85,7 +85,7 @@ Your container is a fully self-contained Debian Linux system. If you want to pok
     docker run -i -t -p 80:8080 sapwebide-docker /bin/bash
 This will give you a bash prompt inside your container. At this point, SAP Web IDE will not be running. To manually launch SAP Web IDE, type:
 
-    CD $WEBIDE_DIR/eclipse
+    cd $WEBIDE_DIR/eclipse
     ./orion
 Typing exit at the osgi> prompt will take you back out to your container, and typing exit again will shut down your container and return to Boot2Docker.
 ## Issues
