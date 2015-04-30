@@ -35,16 +35,13 @@ Your project directory should contain two files:
 * SAP_Web_IDE_Local_Inst.zip
 * Dockerfile
 
-To build the docker image, launch Boot2Docker. You can click on the Boot2Docker app icon, or run Boot2Docker from Terminal:
-
-    Boot2Docker
-Make sure you're in your project directory:
+To build your container, first launch Boot2Docker by clicking on the Boot2Docker app icon (I put mine on the launch bar). Then make sure you're in your project directory:
 
     cd ~/SAP/sapwebide-docker
-Build the sapwebide-docker image:
+Build the sapwebide-docker container:
 
     docker build -t sapwebide-docker .
-There will be a lot of console output as the image is built, including some warning messages and various messages in red. You should be able to ignore these as long as the image builds successfully. It may take some time to download all of the components the first time, but if you rebuild the image it will usually be faster as Docker caches interim steps. The final line of output should be similar to:
+There will be a lot of console output as the container is built, including some warning messages and various messages in red. You should be able to ignore these as long as the build is successful. It may take some time to download all of the components the first time, but if you rebuild the container it will usually be faster as Docker caches interim steps. The final line of output should be similar to:
 
     Successfully built <container id>
 You've successfully built the container and it is ready to run!
@@ -52,7 +49,7 @@ You've successfully built the container and it is ready to run!
 If you're continuing from the step above, you should still be running in Boot2Docker. If you've come back in, be sure to launch Boot2Docker first. From the Boot2Docker console, type:
 
     docker run -p 80:8080 -d sapwebide-docker
-This tells Docker to run your image.  The -p option maps port 80 on your machine to the SAP Web IDE default port (8080) inside the Docker image. The -d option tells Docker to run the image detached (no console input). Docker should respond with a long instance ID:
+This tells Docker to run your container.  The -p option maps port 80 on your machine to the SAP Web IDE default port (8080) inside the container. The -d option tells Docker to run the container detached (no console input). Docker should respond with a long instance ID:
 
     4ac62bc4fbb035541a8e61526d38520e44291f692ab001bfb38288ab781e731a
 Of course, your instance ID will be different. Verify your instance is running:
