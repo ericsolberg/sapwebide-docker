@@ -18,6 +18,7 @@ This is intended for experimental and demo purposes only. It is not intended for
 
 ## Quick Setup
 1. The only thing you need on the target machine is the Docker runtime. On a Mac or Windows machine, [install Boot2Docker](https://docs.docker.com/installation/#installation 'Docker Installation').
+> <font style="text-color:red;">Even easier! Mac Only!</font> Instead of Boot2Docker, [install Kitematic](https://kitematic.com/ 'Download Kitematic'). This GUI tool makes it ridiculously easy to run and configure images from DockerHub. But it also includes the Docker command line and is much easier to install than Boot2Docker. After downloading & running Kitematic, simply select "Open Docker Command Line Terminal" from the File menu. From there, the remainder of the instructions are exactly the same as below.
 2. Create a directory on your computer for building the Docker container. On my system I used:
 
         mkdir ~/SAP
