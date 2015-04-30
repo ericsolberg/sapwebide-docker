@@ -18,6 +18,7 @@ This is intended for experimental and demo purposes only. It is not intended for
 ### Quick Setup
 1. The only thing you need on the target machine is the Docker runtime. On a Mac or Windows machine, [install Boot2Docker](https://docs.docker.com/installation/#installation 'Docker Installation').
 2. Create a directory on your computer for building the Docker image. On my system I used:
+
   mkdir ~/SAP
   mkdir ~/SAP/sapwebide-docker
   cd ~/SAP/sapwebide-docker
