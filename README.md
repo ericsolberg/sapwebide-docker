@@ -35,12 +35,18 @@ Your project directory should contain two files:
 * Dockerfile
 
 To build the docker image, launch Boot2Docker. You can click on the Boot2Docker app icon, or run Boot2Docker from Terminal:
+
     Boot2Docker
 Make sure you're in your project directory:
+
     cd ~/SAP/sapwebide-docker
 Build the sapwebide-docker image:
-    docker build -t sapwebide-docker .
 
+    docker build -t sapwebide-docker .
+There will be a lot of console outpu as the image is built, including some warning messages and various messages in red. You should be able to ignore these as long as the image builds succesfully. It may take some time to download all of the components the first time, but if you rebuild the image it will usually be much faster as Docker caches interim steps. The final line of output should be similar to:
+
+    Successfully built <image id>
+You've succesfully build the image and it is ready to run!
 ### Issues
 Issues...
 ### Todo
