@@ -28,7 +28,7 @@ This is intended for experimental and demo purposes only. It is not intended for
 4. While you're at it, make sure you sign up for a free trial account on the [SAP HANA Cloud Platform](http://hcp.sap.com/developers/TutorialCatalog/nat100_01_native_hana_getting_hana_trial.html 'SAP HCP Free Trial'). Although the HANA Cloud Platform is not used for this local install, you will be able to use the online version of the SAP Web IDE and try things that you can't do on a local install.
 5. Download, clone or cut & paste the Dockerfile. Dockerfile (no extension) is a text file that tells Docker how to build your container. If you're familiar with Git, you can clone the sapwebide-docker project. But that isn't really necessary- it consists of only the one text file. You can simply [download the Dockerfile from GitHub](https://raw.githubusercontent.com/ericsolberg/sapwebide-docker/master/Dockerfile 'Dockerfile'), or cut & paste the contents into a text editor of your choice and save as Dockerfile in your project directory.
 
-## Create the Image
+## Build the Container
 
 Your project directory should contain two files:
 
@@ -91,9 +91,14 @@ This will give you a bash prompt inside your container. At this point, SAP Web I
     CD $WEBIDE_DIR/eclipse
     ./orion
 Typing exit at the osgi> prompt will take you back out to your container, and typing exit again will shut down your container and return to Boot2Docker.
->Note: Any changes you make inside the container, and any 
 ## Issues
-Issues...
+Currently, I've just managed to get SAP Web IDE up and running. There are several more steps to make it fully functional and even more to make it useful. In the mean time, be aware:
+- As noted above, anything you edit or create in your container will be lost when you shut down.
+- There aren't any back end connections defined, so you can't accomplish very much. You can configure those yourself inside the running container, but you'll want to learn how to add those changes to the container build so your changes aren't lost.
+- Running your app currently doesn't work. This is because SAP Web IDE launches the app preview on a randomly assigned port. You can easily map ports from the Container to the VM (as we did with port 80:8080), but the randomly assigned port comes from a broad range. Docker does support mapping ranges of ports (i.e. -p 45000-55000:45000-55000) but I found that this takes a very long time (and probably resources) as Docker loops through and maps every port in that range. It would be better if SAP Web IDE used the same port and just mapped the preview into a unique URL (mental note... submit a feature request to SAP Web IDE).
 ## Todo
-Todo...
+1. Map project storage to a local volume for project persistence
+2. Document a simple way to configure service destinations
+3. Figure out a good way to map ports for app preview
+4. Enable GitHub integration for a fully reproduceable environment with persistent configuration and projects
 
