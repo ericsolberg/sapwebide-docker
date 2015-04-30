@@ -9,13 +9,13 @@ This is part of a general exploration of MicroServices and DevOps concepts in th
 ## Important
 This is intended for experimental and demo purposes only. It is not intended for production use. The resulting Docker image should not be distributed as it contains proprietary components that may not be distributed.
 ## Contents
-* Quick Setup
-* Create the sapwebide-docker Image
-* Running the sapwebide-docker Image
-* Issues
-* Todo
+* [Quick Setup](#quick-setup)
+* [Create the Image](#create-the-image)
+* [Run the Image](#run-the-image)
+* [Issues](#issues)
+* [Todo](#todo)
 
-### Quick Setup
+## Quick Setup
 1. The only thing you need on the target machine is the Docker runtime. On a Mac or Windows machine, [install Boot2Docker](https://docs.docker.com/installation/#installation 'Docker Installation').
 2. Create a directory on your computer for building the Docker image. On my system I used:
 
@@ -27,7 +27,7 @@ This is intended for experimental and demo purposes only. It is not intended for
 4. While you're at it, make sure you sign up for a free trial account on the [SAP HANA Cloud Platform](http://hcp.sap.com/developers/TutorialCatalog/nat100_01_native_hana_getting_hana_trial.html 'SAP HCP Free Trial'). Although the HANA Cloud Platform is not used in this local install, you will be able to use the online version of the SAP Web IDE and try things that you can't do on a local install.
 5. Download, clone or cut & paste the Dockerfile. Dockerfile (no extension) is a text file that tells Docker how to build your image. If you're familiar with Git, you can clone the sapwebide-docker project. But that isn't really necessary- it consists of only the one text file. You can simply [download the Dockerfile from GitHub](https://raw.githubusercontent.com/ericsolberg/sapwebide-docker/master/Dockerfile 'Dockerfile'), or cut & paste the contents into a text editor of your choice and save as Dockerfile in your project directory.
 
-### Create the sapwebide-docker Image
+## Create the Image
 
 Your project directory should contain two files:
 
@@ -47,8 +47,8 @@ There will be a lot of console outpu as the image is built, including some warni
 
     Successfully built <image id>
 You've succesfully build the image and it is ready to run!
-### Issues
+## Issues
 Issues...
-### Todo
+## Todo
 Todo...
 
