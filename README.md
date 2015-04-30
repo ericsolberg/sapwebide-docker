@@ -6,7 +6,7 @@ The purpose of this project is to easily and quickly run SAP Web IDE in a stand-
 - Eclipse Director
 - SAP Web IDE 1.8 Local Install
 
-This is part of a general exploration of MicroServices and DevOps concepts in the context of SAP Mobile technologies. This is not a "proper" microservice, however, as a microservice implementation of SAP Web IDE would be decomposed into finer-grained services.
+This is part of a general exploration of microservices and DevOps concepts in the context of SAP Mobile technologies. This is not a "proper" microservice, however, as a microservice implementation of SAP Web IDE would be decomposed into finer-grained services.
 ## Important
 This is intended for experimental and demo purposes only. It is not intended for production use. The resulting Docker container should not be distributed or posted on a public repository as it contains proprietary components.
 ## Contents
@@ -47,7 +47,7 @@ Build the sapwebide-docker image:
 There will be a lot of console output as the image is built, including some warning messages and various messages in red. You should be able to ignore these as long as the image builds successfully. It may take some time to download all of the components the first time, but if you rebuild the image it will usually be faster as Docker caches interim steps. The final line of output should be similar to:
 
     Successfully built <container id>
-You've succesfully built the container and it is ready to run!
+You've successfully built the container and it is ready to run!
 ## Run the Container
 If you're continuing from the step above, you should still be running in Boot2Docker. If you've come back in, be sure to launch Boot2Docker first. From the Boot2Docker console, type:
 
@@ -100,5 +100,5 @@ Currently, I've just managed to get SAP Web IDE up and running. There are severa
 1. Map project storage to a local volume for project persistence
 2. Document a simple way to configure service destinations
 3. Figure out a good way to map ports for app preview
-4. Enable GitHub integration for a fully reproduceable environment with persistent configuration and projects
-
+4. Enable GitHub integration for a fully reproducible environment with persistent configuration and projects
+5. Incorporate the Hybrid Application Toolkit (HAT), Android tools and/or links to locally installed HAT (for Android and iOS) and this will actually become a useful tool for portable app construction and demonstration.
