@@ -1,7 +1,7 @@
 # SAP Web IDE Local Install in Docker
 The purpose of this project is to easily and quicly run SAP Web IDE in a stand-alone, repeatable environment regardless of platform or other dependencies. This is achieved by building a Docker image with the following pre-installed:
-- Debian (Wheezy)
-- Oracle JRE 8
+- Debian Linux (Wheezy)
+- Oracle Java JRE 8
 - Eclipse Orion
 - Eclipse Director
 - SAP Web IDE 1.8 Local Install
